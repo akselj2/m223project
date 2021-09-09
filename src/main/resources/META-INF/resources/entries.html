@@ -14,22 +14,32 @@
             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
             crossorigin="anonymous"></script>
 </head>
-<body>
-<form id="loginUser">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username" required>
-    <label for="password">Password</label>
-    <input type="text" name="password" id="password" required>
-    <input type="submit" value="Login" onclick="changePage()">
-    <script>
-        function changePage() {
-            window.location.href = "entries.html";
-        }
-    </script>
-</form>
-<a href="register.html"><p>Not got an Account?</p></a>
-</body>
-<script>
+<header>
 
-</script>
+</header>
+<body>
+<form id="createEntryForm">
+    <label for="checkIn">Check in</label>
+    <input type="date" name="checkInDate" id="checkIn" required>
+    <input type="time" name="checkInTime" required>
+    <label for="checkOut">Check out</label>
+    <input type="date" name="checkOutDate" id="checkOut" required>
+    <input type="time" name="checkOutTime" required>
+    <input type="submit" value="Save"/>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Check in</th>
+        <th>Check out</th>
+    </tr>
+    </thead>
+    <tbody id="entryDisplay">
+    <tr>
+        <td colspan="3">Loading...</td>
+    </tr>
+    </tbody>
+</table>
+</body>
 </html>

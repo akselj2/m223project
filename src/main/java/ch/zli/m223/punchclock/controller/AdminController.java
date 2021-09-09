@@ -6,6 +6,5 @@ import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
-@Path("/admins")
 public class AdminController {
 }

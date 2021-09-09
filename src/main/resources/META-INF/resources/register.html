@@ -14,22 +14,21 @@
             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
             crossorigin="anonymous"></script>
 </head>
+<header>
+
+</header>
 <body>
-<form id="loginUser">
+<form id="createUserForm">
     <label for="username">Username</label>
     <input type="text" name="username" id="username" required>
     <label for="password">Password</label>
-    <input type="text" name="password" id="password" required>
-    <input type="submit" value="Login" onclick="changePage()">
+    <input type="text" name="password" id="password">
+    <input type="submit" value="Register" onclick="changePage()"/>
     <script>
         function changePage() {
             window.location.href = "entries.html";
         }
     </script>
 </form>
-<a href="register.html"><p>Not got an Account?</p></a>
 </body>
-<script>
-
-</script>
 </html>

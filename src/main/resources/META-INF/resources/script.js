@@ -1,5 +1,6 @@
 const URL = 'http://localhost:8080';
 let entries = [];
+let users = [];
 
 const dateAndTimeToDate = (dateString, timeString) => {
     return new Date(`${dateString}T${timeString}`).toISOString();
@@ -26,6 +27,26 @@ const createEntry = (e) => {
     });
 };
 
+const createUser = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const user = {};
+    user['username'] = String(formData.get('username'));
+    user['password'] = String(formData.get('password'));
+
+    fetch(`${URL}/users`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    }).then((result) => {
+        result.json().then((user) => {
+            users.push(user);
+        });
+    });
+}
+
 const indexEntries = () => {
     fetch(`${URL}/entries`, {
         method: 'GET'
@@ -37,6 +58,16 @@ const indexEntries = () => {
     });
     renderEntries();
 };
+
+const indexUsers = () => {
+    fetch(`${URL}/users`, {
+        method: 'GET'
+    }).then((result) => {
+        result.json().then((result) => {
+            entries = result;
+        });
+    });
+}
 
 const createCell = (text) => {
     const cell = document.createElement('td');
@@ -61,3 +92,9 @@ document.addEventListener('DOMContentLoaded', function(){
     createEntryForm.addEventListener('submit', createEntry);
     indexEntries();
 });
+
+document.addEventListener('DOMContentLoaded', function (){
+    const createUserForm = document.querySelector('#createUserForm');
+    createUserForm.addEventListener('submit', createUser);
+    indexUsers();
+})
