@@ -12,8 +12,10 @@ import javax.ws.rs.core.MediaType;
 
 import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.service.EntryService;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 @Path("/entries")
+@Tag(name = "Entries", description = "Handling of entries")
 public class EntryController {
 
     @Inject
