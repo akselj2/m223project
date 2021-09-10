@@ -14,8 +14,8 @@ import javax.ws.rs.core.MediaType;
 import org.eclipse.microprofile.jwt.Claims;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
-import ch.zli.m223.punchclock.ViewModel.LoginResultViewModel;
-import ch.zli.m223.punchclock.ViewModel.LoginViewModel;
+import ch.zli.m223.punchclock.config.LoginResultViewModel;
+import ch.zli.m223.punchclock.config.LoginViewModel;
 import io.smallrye.jwt.build.Jwt;
 
 /*

@@ -102,7 +102,6 @@ const renderUsers = () => {
     display.innerHTML = '';
     users.forEach((user) => {
         const row = document.createElement('tr');
-        row.appendChild(createCell(user.id));
         row.appendChild(createCell(user.username));
         display.appendChild(row);
     });
