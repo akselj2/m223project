@@ -1,13 +1,12 @@
 package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.controller.SecuredController;
-import ch.zli.m223.punchclock.domain.Admin;
 import ch.zli.m223.punchclock.domain.Category;
 import ch.zli.m223.punchclock.domain.User;
 
 import javax.persistence.EntityManager;
-import javax.transaction.TransactionScoped;
 import javax.transaction.Transactional;
+
 
 public class AdminService extends SecuredController {
 

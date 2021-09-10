@@ -59,6 +59,28 @@ const indexEntries = () => {
     renderEntries();
 };
 
+function deleteUser() {
+    let id = document.getElementById("id").value;
+
+    fetch(`${URL}/users/${id}`, {
+        method: 'DELETE',
+    }).then((result) => {
+        renderUsers();
+    })
+}
+
+function deleteEntry() {
+    let id = document.getElementById("id").value;
+
+    fetch(`${URL}/entries/${id}`, {
+        method: 'DELETE',
+    }).then((result) => {
+        renderEntries();
+    });
+
+    console.log("Deleted.")
+}
+
 const indexUsers = () => {
     fetch(`${URL}/users`, {
         method: 'GET'
@@ -67,12 +89,23 @@ const indexUsers = () => {
             entries = result;
         });
     });
-}
+};
 
 const createCell = (text) => {
     const cell = document.createElement('td');
     cell.innerText = text;
     return cell;
+};
+
+const renderUsers = () => {
+    const display = document.querySelector('#userDisplay');
+    display.innerHTML = '';
+    users.forEach((user) => {
+        const row = document.createElement('tr');
+        row.appendChild(createCell(user.id));
+        row.appendChild(createCell(user.username));
+        display.appendChild(row);
+    });
 };
 
 const renderEntries = () => {
@@ -98,3 +131,15 @@ document.addEventListener('DOMContentLoaded', function (){
     createUserForm.addEventListener('submit', createUser);
     indexUsers();
 })
+
+document.addEventListener('DOMContentLoaded', function (){
+    const deleteEntryForm = document.querySelector('#deleteEntryForm');
+    deleteEntryForm.addEventListener('submit', deleteEntry);
+    indexEntries();
+})
+
+/*document.addEventListener('DOMContentLoaded', function () {
+    const deleteUserX = document.querySelector('#deleteUser');
+    deleteUserX.addEventListener('submit', deleteUser);
+    indexUsers();
+})*/

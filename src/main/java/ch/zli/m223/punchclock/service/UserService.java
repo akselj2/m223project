@@ -1,5 +1,6 @@
 package ch.zli.m223.punchclock.service;
 
+import ch.zli.m223.punchclock.controller.SecuredController;
 import ch.zli.m223.punchclock.domain.User;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -9,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped
-public class UserService {
+public class UserService extends SecuredController {
 
     @Inject
     private EntityManager entityManager;

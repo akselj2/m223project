@@ -46,5 +46,31 @@
         <input type="submit" value="Delete">
     </form>
 </table>
+<form id="createUserForm">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" required>
+    <label for="password">Password</label>
+    <input type="text" name="password" id="password">
+    <input type="submit" value="creat user"/>
+</form>
+<hr/>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+    </tr>
+    </thead>
+    <tbody id="userDisplay">
+    <tr>
+        <td colspan="2">Loading...</td>
+    </tr>
+    </tbody>
+    <form id="deleteUser">
+        <label for="uid">enter ID to delete</label>
+        <input type="text" name="uid" id="uid">
+        <input type="submit" value="Delete">
+    </form>
+</table>
 </body>
 </html>

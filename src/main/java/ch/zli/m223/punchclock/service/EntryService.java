@@ -23,6 +23,12 @@ public class EntryService {
         return entry;
     }
 
+    @Transactional
+    public void delete(Long id){
+        Entry entry = entityManager.find(Entry.class, id);
+        entityManager.remove(entry);
+    }
+
     @SuppressWarnings("unchecked")
     public List<Entry> findAll() {
         var query = entityManager.createQuery("FROM Entry");

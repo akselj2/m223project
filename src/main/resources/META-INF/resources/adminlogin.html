@@ -15,7 +15,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<form id="loginUser">
+<form id="loginAdmin">
     <label for="username">Username</label>
     <input type="text" name="username" id="username" required>
     <label for="password">Password</label>
@@ -23,15 +23,15 @@
     <input type="submit" value="Login" onclick="changePage()">
     <script>
         function changePage() {
-            window.location.href = "entries.html";
+            window.location.href = "manage.html";
         }
 
         function changeUser() {
-            window.location.href = "adminlogin.html"
+            window.location.href = "index.html"
         }
     </script>
 </form>
-<button onclick="changeUser()">Admin Login</button>
+<button onclick="changeUser()">User Login</button>
 <a href="register.html"><p>Not got an Account?</p></a>
 </body>
 <script>
